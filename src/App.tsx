@@ -7,12 +7,12 @@ import NavBar from "./components/NavBar";
 import PlatformSelector from "./components/platformSelector";
 import PlatfromiconList from "./components/PlatfromiconList";
 import SortSelector from "./components/SortSelector";
-import { Platform } from "./hooks/useGames";
+import { Platforms } from "./hooks/usePlatforms";
 import { Genre } from "./hooks/useGenres";
 
 export interface GameQuery {
   genre: Genre | null;
-  platform: Platform | null;
+  platform: Platforms | null;
   sortOrder: string;
   searchText:string;
 }
