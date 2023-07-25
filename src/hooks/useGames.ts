@@ -1,12 +1,11 @@
 //custom hook for fetching games
 
-import { useInfiniteQuery, useQuery } from "@tanstack/react-query";
-import { GameQuery } from "../App";
+import { useInfiniteQuery } from "@tanstack/react-query";
 // import { FetchResponse } from "./useData";
-import { FetchResponse } from "../services/api-client";
-import APIClient from "../services/api-client";
-import { Platforms } from "./usePlatforms";
 import ms from "ms";
+import APIClient, { FetchResponse } from "../services/api-client";
+import useGameQueryStore from "../store";
+import { Platforms } from "./usePlatforms";
 
 const apiClient = new APIClient<Game>('/games');
 export interface Game {
@@ -18,8 +17,9 @@ export interface Game {
   rating_top: number;
 }
 
-const useGames = (gameQuery: GameQuery) =>
-  useInfiniteQuery<FetchResponse<Game>, Error>({
+const useGames = () =>{
+  const gameQuery = useGameQueryStore(s=>s.gameQuery)
+ return useInfiniteQuery<FetchResponse<Game>, Error>({
     queryKey: ["games", gameQuery],
     queryFn: ({pageParam = 1 }) => {
       return apiClient
@@ -40,5 +40,7 @@ const useGames = (gameQuery: GameQuery) =>
     // staleTime:24*60*60*1000 //24hrs
     staleTime:ms('24h'),
   });
+}
+  
 
 export default useGames;
