@@ -2,7 +2,7 @@ import { Genre } from "./Genre";
 import { Platforms } from "./Platforms";
 import Publisher from "./Publisher";
 
-export interface Game {
+export default interface Game {
   id: number;
   name: string;
   background_image: string;
