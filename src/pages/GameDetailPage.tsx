@@ -14,6 +14,7 @@ import {
 //   import GameScreenshots from '../components/GameScreenshots';
 //   import GameTrailer from '../components/GameTrailer';
   import useGame from '../hooks/useGame';
+import ExpandableText from '../components/ExpandableText';
   
   const GameDetailPage = () => {
     const { slug } = useParams(); //getting param from route
@@ -27,7 +28,7 @@ import {
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
         <GridItem>
           <Heading>{game.name}</Heading>
-          <Text>{game.description_raw}</Text>
+          <ExpandableText>{game.description_raw}</ExpandableText>
           {/* <GameAttributes game={game} />
         </GridItem>
         <GridItem>
