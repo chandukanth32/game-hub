@@ -17,6 +17,7 @@ import {
 import ExpandableText from '../components/ExpandableText';
 import GameAttributes from '../components/GameAttributes';
 import GameTrailer from '../components/GameTrailer';
+import GameScreenshots from '../components/GameScreenShots';
   
   const GameDetailPage = () => {
     const { slug } = useParams(); //getting param from route
@@ -35,7 +36,7 @@ import GameTrailer from '../components/GameTrailer';
         </GridItem>
         <GridItem>
           <GameTrailer gameId={game.id} />
-          {/* <GameScreenshots gameId={game.id} /> */}
+          <GameScreenshots gameId={game.id} />
         </GridItem>
       </SimpleGrid>
     );
