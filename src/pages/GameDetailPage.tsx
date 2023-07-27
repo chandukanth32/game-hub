@@ -15,6 +15,7 @@ import {
 //   import GameTrailer from '../components/GameTrailer';
   import useGame from '../hooks/useGame';
 import ExpandableText from '../components/ExpandableText';
+import GameAttributes from '../components/GameAttributes';
   
   const GameDetailPage = () => {
     const { slug } = useParams(); //getting param from route
@@ -29,11 +30,8 @@ import ExpandableText from '../components/ExpandableText';
         <GridItem>
           <Heading>{game.name}</Heading>
           <ExpandableText>{game.description_raw}</ExpandableText>
-          {/* <GameAttributes game={game} />
-        </GridItem>
-        <GridItem>
-          <GameTrailer gameId={game.id} />
-          <GameScreenshots gameId={game.id} /> */}
+          <GameAttributes game={game} />
+        
         </GridItem>
       </SimpleGrid>
     );
