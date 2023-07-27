@@ -10,7 +10,7 @@ import {MdPhoneIphone} from 'react-icons/md';
 import { SiNintendo} from 'react-icons/si';
 import { BsGlobe } from 'react-icons/bs'
 import { HStack, Text } from "@chakra-ui/layout";
-import { Platforms } from "../hooks/usePlatforms";
+import { Platforms } from "../Entities/Platforms";
 import Icon from "@chakra-ui/icon";
 import { IconType } from "react-icons";
 
